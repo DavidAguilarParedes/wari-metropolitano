@@ -95,6 +95,15 @@ async function geocode(lugar: string) {
 export async function POST(req: NextRequest) {
   const { messages } = await req.json();
 
+  // Guardrails: limit message count and length to prevent abuse
+  if (!Array.isArray(messages) || messages.length > 30) {
+    return new Response(JSON.stringify({ type: "message", content: "Demasiados mensajes. Inicia una nueva conversacion." }), { status: 400 });
+  }
+  const lastMsg = messages[messages.length - 1];
+  if (lastMsg?.content && typeof lastMsg.content === "string" && lastMsg.content.length > 500) {
+    return new Response(JSON.stringify({ type: "message", content: "Tu mensaje es muy largo. Preguntame algo mas corto, como: ¿Como llego de Naranjal a Angamos?" }), { status: 400 });
+  }
+
   const now = new Date().toLocaleString("es-PE", {
     timeZone: "America/Lima",
     weekday: "long",
