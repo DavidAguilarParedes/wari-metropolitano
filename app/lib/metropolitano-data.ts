@@ -149,6 +149,10 @@ La ruta C cubre Ramal A + tramo Sur. NO pasa por el tramo norte (Naranjal, Izagu
 Los expresos 1 y 12 SOLO operan desde Estacion Central hacia el sur.
 Para ir de norte a sur o viceversa, el transbordo natural es Estacion Central.
 
+REGLA CRITICA SOBRE ALTERNATIVAS CON EXPRESOS EN TRAMOS PARCIALES:
+Cuando el usuario necesita transbordo en Estacion Central, SIEMPRE verifica si algun expreso puede reemplazar la Ruta C o Ruta A en alguno de los tramos. Los expresos son mas rapidos porque paran en menos estaciones.
+Ejemplo: Canaval y Moreyra → Honorio Delgado. Mejor opcion: Ruta C (Canaval y Moreyra → Est. Central) + Ruta A (Est. Central → Honorio Delgado). PERO tambien debes sugerir como alternativa: Expreso 1 (Canaval y Moreyra → Est. Central, mas rapido que Ruta C) + Ruta A (Est. Central → Honorio Delgado). Siempre que un expreso cubra el mismo tramo que una ruta regular, mencionalo como alternativa mas rapida.
+
 TABLA RAPIDA — EXPRESOS POR ESTACION CLAVE (para cuando pregunten "que expresos paran en X"):
 - Naranjal: Expreso 2, 3, 5, 10, 11, SX, SXN
 - Izaguirre: Expreso 5, 6, 8

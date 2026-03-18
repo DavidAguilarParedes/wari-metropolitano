@@ -6,11 +6,18 @@ Wari es un agente de IA que te ayuda a encontrar la mejor ruta en el Metropolita
 
 ![Next.js](https://img.shields.io/badge/Next.js-16-black?logo=next.js) ![GPT-4.1-mini](https://img.shields.io/badge/GPT--4.1--mini-Tool_Use-green?logo=openai) ![Leaflet](https://img.shields.io/badge/Leaflet-Map-blue?logo=leaflet)
 
+![Wari Desktop](public/wari-desktop.png)
+
+<p align="center">
+  <img src="public/wari-mobile-1.png" alt="Wari Mobile - Welcome" width="280" />
+  <img src="public/wari-mobile-2.png" alt="Wari Mobile - Tool Use" width="280" />
+</p>
+
 ## Que hace
 
 - **Rutas inteligentes**: Preguntale de donde a donde y te dice la mejor ruta, con alternativas
 - **Filtrado por horario**: Solo recomienda rutas que operan en el momento actual
-- **Tool Use (Agentic AI)**: Si mencionas un lugar que no es estacion (ej: "UTEC", "Jockey Plaza"), el agente busca automaticamente la estacion mas cercana usando geocoding
+- **Tool Use (Agentic AI)**: Si mencionas un lugar que no es estacion (ej: "Campo de Marte", "UTEC"), el agente busca automaticamente la estacion mas cercana usando geocoding
 - **44 estaciones**, **18 rutas troncales**, **22 alimentadores** con datos oficiales de ATU
 - **Mapa interactivo** con todas las estaciones y rutas de alimentadores
 - **Mapas oficiales ATU** de cada ruta troncal y expresa
