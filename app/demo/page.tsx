@@ -146,12 +146,13 @@ export default function DemoPage() {
       {/* Mobile FAB */}
       <button
         onClick={() => setShowMapOverlay(true)}
-        className="lg:hidden fixed bottom-12 right-4 z-40 w-13 h-13 rounded-2xl bg-[#1e3a5f] text-white shadow-xl shadow-[#1e3a5f]/25 flex items-center justify-center hover:scale-105 active:scale-95 transition-transform"
+        className="lg:hidden fixed bottom-20 left-4 z-40 flex items-center gap-2 px-3.5 py-2.5 rounded-full bg-[#1e3a5f] text-white shadow-xl shadow-[#1e3a5f]/25 hover:scale-105 active:scale-95 transition-transform"
         aria-label="Ver mapa"
       >
-        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l5.447 2.724A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
         </svg>
+        <span className="text-[11px] font-semibold">Mapa</span>
       </button>
 
       {/* Mobile Map Overlay */}
