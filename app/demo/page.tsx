@@ -135,7 +135,7 @@ export default function DemoPage() {
       {/* Footer */}
       <footer className="shrink-0 px-5 py-2 flex items-center justify-between">
         <p className="text-[10px] text-[#1e3a5f]/25">
-          Por <span className="font-semibold text-[#1e3a5f]/40">David Aguilar</span> · AI Engineer
+          Por <a href="https://www.linkedin.com/in/aguilardavidp/" target="_blank" rel="noopener noreferrer" className="font-semibold text-[#1e3a5f]/40 hover:text-[#1e3a5f]/70 transition-colors">David Aguilar</a> · AI Engineer
         </p>
         <p className="text-[10px] text-[#1e3a5f]/25">Next.js + GPT-4.1-mini + Leaflet</p>
       </footer>

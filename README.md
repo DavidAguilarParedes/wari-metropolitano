@@ -95,6 +95,7 @@ app/
 **David Aguilar** — AI Engineer
 
 - [GitHub](https://github.com/DavidAguilarParedes)
+- [LinkedIn](https://www.linkedin.com/in/aguilardavidp/)
 
 ---
 
