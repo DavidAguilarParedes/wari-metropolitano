@@ -128,7 +128,7 @@ export default function DemoPage() {
 
         {/* Right: Chat */}
         <div className="flex flex-col min-h-0 bg-white/90 backdrop-blur-xl rounded-2xl border border-black/[0.06] overflow-hidden shadow-sm">
-          <Chat onLocationFound={handleLocationFound} stationFromMap={stationFromMap} onStationFromMapConsumed={handleStationConsumed} />
+          <Chat onLocationFound={handleLocationFound} stationFromMap={stationFromMap} onStationFromMapConsumed={handleStationConsumed} onOpenMap={() => setShowMapOverlay(true)} />
         </div>
       </main>
 
@@ -140,18 +140,7 @@ export default function DemoPage() {
           </span>
           <svg className="w-3.5 h-3.5 text-[#0077b5]/40 group-hover:text-[#0077b5] transition-colors" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
         </a>
-        <div className="flex items-center gap-3">
-          <p className="text-[10px] text-[#1e3a5f]/20 hidden sm:block">Next.js + GPT-4.1-mini + Leaflet</p>
-          <button
-            onClick={() => setShowMapOverlay(true)}
-            className="lg:hidden flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#1e3a5f] text-white text-[11px] font-semibold shadow-sm hover:bg-[#162d4a] active:scale-95 transition-all"
-          >
-            <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l5.447 2.724A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
-            </svg>
-            Mapa
-          </button>
-        </div>
+        <p className="text-[10px] text-[#1e3a5f]/20 hidden sm:block">Next.js + GPT-4.1-mini + Leaflet</p>
       </footer>
 
       {/* Mobile Map Overlay */}

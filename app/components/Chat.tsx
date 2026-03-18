@@ -25,6 +25,7 @@ interface ChatProps {
   onLocationFound: (lat: number, lng: number, station: Station) => void;
   stationFromMap: Station | null;
   onStationFromMapConsumed: () => void;
+  onOpenMap?: () => void;
 }
 
 const SUGGESTIONS = [
@@ -33,7 +34,7 @@ const SUGGESTIONS = [
   { text: "De Canaval y Moreyra a Caqueta", icon: "🔄", label: "Sur a Norte" },
 ];
 
-export default function Chat({ onLocationFound, stationFromMap, onStationFromMapConsumed }: ChatProps) {
+export default function Chat({ onLocationFound, stationFromMap, onStationFromMapConsumed, onOpenMap }: ChatProps) {
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
@@ -156,21 +157,34 @@ export default function Chat({ onLocationFound, stationFromMap, onStationFromMap
       {/* Chat sub-header */}
       <div className="px-4 py-2.5 border-b border-black/[0.04] flex items-center justify-between shrink-0">
         <span className="text-[11px] text-[#1e3a5f]/35 font-medium">Preguntame tu ruta</span>
-        <button
-          onClick={handleLocate}
-          disabled={locating}
-          className="flex items-center gap-1.5 text-[10px] text-white font-semibold bg-[#1e3a5f] hover:bg-[#162d4a] px-3 py-1.5 rounded-lg transition-all active:scale-[0.97] disabled:opacity-50"
-        >
-          {locating ? (
-            <span className="w-3 h-3 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-          ) : (
-            <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-            </svg>
+        <div className="flex items-center gap-1.5">
+          {onOpenMap && (
+            <button
+              onClick={onOpenMap}
+              className="lg:hidden flex items-center gap-1.5 text-[10px] font-semibold text-[#1e3a5f]/60 hover:text-[#1e3a5f] bg-[#1e3a5f]/[0.06] hover:bg-[#1e3a5f]/[0.12] px-3 py-1.5 rounded-lg transition-all active:scale-[0.97]"
+            >
+              <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l5.447 2.724A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
+              </svg>
+              Mapa
+            </button>
           )}
-          Mi ubicacion
-        </button>
+          <button
+            onClick={handleLocate}
+            disabled={locating}
+            className="flex items-center gap-1.5 text-[10px] text-white font-semibold bg-[#1e3a5f] hover:bg-[#162d4a] px-3 py-1.5 rounded-lg transition-all active:scale-[0.97] disabled:opacity-50"
+          >
+            {locating ? (
+              <span className="w-3 h-3 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+            ) : (
+              <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+            )}
+            Mi ubicacion
+          </button>
+        </div>
       </div>
 
       {/* Messages area */}
