@@ -132,28 +132,27 @@ export default function DemoPage() {
         </div>
       </main>
 
-      {/* Footer */}
-      <footer className="shrink-0 px-5 py-2.5 flex items-center justify-between">
+      {/* Footer — mobile: includes map button inline; desktop: just credits */}
+      <footer className="shrink-0 px-3 sm:px-5 py-2 flex items-center justify-between">
         <a href="https://www.linkedin.com/in/aguilardavidp/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 group">
           <span className="text-[11px] text-[#1e3a5f]/35 group-hover:text-[#1e3a5f]/60 transition-colors">
             Por <span className="font-bold text-[#1e3a5f]/50 group-hover:text-[#1e3a5f]/80">David Aguilar</span> <span className="text-[#1e3a5f]/25">·</span> AI Engineer
           </span>
           <svg className="w-3.5 h-3.5 text-[#0077b5]/40 group-hover:text-[#0077b5] transition-colors" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
         </a>
-        <p className="text-[10px] text-[#1e3a5f]/20">Next.js + GPT-4.1-mini + Leaflet</p>
+        <div className="flex items-center gap-3">
+          <p className="text-[10px] text-[#1e3a5f]/20 hidden sm:block">Next.js + GPT-4.1-mini + Leaflet</p>
+          <button
+            onClick={() => setShowMapOverlay(true)}
+            className="lg:hidden flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#1e3a5f] text-white text-[11px] font-semibold shadow-sm hover:bg-[#162d4a] active:scale-95 transition-all"
+          >
+            <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l5.447 2.724A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
+            </svg>
+            Mapa
+          </button>
+        </div>
       </footer>
-
-      {/* Mobile FAB */}
-      <button
-        onClick={() => setShowMapOverlay(true)}
-        className="lg:hidden fixed bottom-[4.5rem] left-4 z-40 flex items-center gap-2 px-3.5 py-2.5 rounded-full bg-[#1e3a5f] text-white shadow-xl shadow-[#1e3a5f]/25 hover:scale-105 active:scale-95 transition-transform"
-        aria-label="Ver mapa"
-      >
-        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l5.447 2.724A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
-        </svg>
-        <span className="text-[11px] font-semibold">Mapa</span>
-      </button>
 
       {/* Mobile Map Overlay */}
       {showMapOverlay && (
