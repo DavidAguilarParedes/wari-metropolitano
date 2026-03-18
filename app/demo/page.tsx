@@ -42,7 +42,7 @@ export default function DemoPage() {
   const handleStationConsumed = useCallback(() => setStationFromMap(null), []);
 
   return (
-    <div className="h-screen flex flex-col bg-[#eef1f5]">
+    <div className="h-screen flex flex-col bg-[#e4e9f0]">
       {/* Header */}
       <header className="shrink-0 animate-fade-in">
         <div className="m-2 sm:m-3 bg-white/70 backdrop-blur-2xl rounded-2xl border border-black/[0.05] shadow-sm">
@@ -90,7 +90,7 @@ export default function DemoPage() {
       {/* Main content */}
       <main className="flex-1 grid grid-cols-1 lg:grid-cols-2 min-h-0 mx-2 sm:mx-3 mb-2 sm:mb-3 gap-2 sm:gap-3">
         {/* Left: Map / Routes (desktop) */}
-        <div className="hidden lg:flex flex-col min-h-0 bg-white/70 backdrop-blur-xl rounded-2xl border border-black/[0.05] overflow-hidden shadow-sm">
+        <div className="hidden lg:flex flex-col min-h-0 bg-white/90 backdrop-blur-xl rounded-2xl border border-black/[0.06] overflow-hidden shadow-sm">
           <div className="flex border-b border-black/[0.04] shrink-0 relative">
             <div
               className="absolute bottom-0 h-[2px] bg-[#1e3a5f] transition-all duration-300 ease-out rounded-full"
@@ -127,7 +127,7 @@ export default function DemoPage() {
         </div>
 
         {/* Right: Chat */}
-        <div className="flex flex-col min-h-0 bg-white/70 backdrop-blur-xl rounded-2xl border border-black/[0.05] overflow-hidden shadow-sm">
+        <div className="flex flex-col min-h-0 bg-white/90 backdrop-blur-xl rounded-2xl border border-black/[0.06] overflow-hidden shadow-sm">
           <Chat onLocationFound={handleLocationFound} stationFromMap={stationFromMap} onStationFromMapConsumed={handleStationConsumed} />
         </div>
       </main>
@@ -146,7 +146,7 @@ export default function DemoPage() {
       {/* Mobile FAB */}
       <button
         onClick={() => setShowMapOverlay(true)}
-        className="lg:hidden fixed bottom-20 left-4 z-40 flex items-center gap-2 px-3.5 py-2.5 rounded-full bg-[#1e3a5f] text-white shadow-xl shadow-[#1e3a5f]/25 hover:scale-105 active:scale-95 transition-transform"
+        className="lg:hidden fixed bottom-[4.5rem] left-4 z-40 flex items-center gap-2 px-3.5 py-2.5 rounded-full bg-[#1e3a5f] text-white shadow-xl shadow-[#1e3a5f]/25 hover:scale-105 active:scale-95 transition-transform"
         aria-label="Ver mapa"
       >
         <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
